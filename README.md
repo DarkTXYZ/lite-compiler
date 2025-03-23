@@ -1,64 +1,71 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/mvvId2ep)
+# Lite Compiler
 
-# Responsibilities
+Lite Compiler is a simple compiler project aimed at demonstrating basic type checking and parsing functionalities.
 
-## Riw
+## Features
 
-- [PR #2](https://github.com/261406-2566-2/a3-typechecking-team/pull/2)
-  - apply a2 progress (just copy/paste)
-- [PR #3](https://github.com/261406-2566-2/a3-typechecking-team/pull/3)
-  - refactor some AST to be a record
-  - refactor parser a little bit
-  - add type checking for ARITH-INT, ARITH-DOUBLE, ARITH-COERCE-L, ARITH-COERCE-R rule
-  - add type checking for function definition
-  - support Pair in type checking
-- [PR #8](https://github.com/261406-2566-2/a3-typechecking-team/pull/8)
-  - add type checking for LET-VAR rule
-- [PR #9](https://github.com/261406-2566-2/a3-typechecking-team/pull/9)
-  - add type checking for LAMBDA-DECL rule, add test cases, and bug fixes
-- [PR #10](https://github.com/261406-2566-2/a3-typechecking-team/pull/10)
-  - add type checking for FUNC-COMP rule and add test cases
-- [PR #11](https://github.com/261406-2566-2/a3-typechecking-team/pull/11)
-  - check for duplicated functions
-  - pass `env` to use in function type check
-- [PR #14](https://github.com/261406-2566-2/a3-typechecking-team/pull/14)
-  - fix type check order bug
-- [PR #15](https://github.com/261406-2566-2/a3-typechecking-team/pull/15)
-  - add type checking for LET-FUNC rule and add test cases
+- Type checking for arithmetic operations (integer, double, coercion)
+- Type checking for function definitions and applications
+- Type checking for let variable and let function rules
+- Type checking for lambda declarations
+- Type checking for list construction and concatenation
+- Type checking for numeric and boolean comparisons
+- Pattern matching rules (excluding constructor patterns)
 
-## Tee
+## Known Issues
 
-- [PR #4](https://github.com/261406-2566-2/a3-typechecking-team/pull/4)
-  - add `init_env`: used in initialize symbol table
-- [PR #5](https://github.com/261406-2566-2/a3-typechecking-team/pull/5)
-  - add NUMERIC-COMP typechecking rule (number comparison)
-  - add COMP typechecking rule (equality comparison)
-  - add BOOL typechecking rule (and, or operator)
-- [PR #6](https://github.com/261406-2566-2/a3-typechecking-team/pull/6)
-  - add LIST-CONS typechecking rule (List construction: appending element in front of list)
-  - add LIST-CONCAT typechecking rule (List concatenation)
-- [PR #7](https://github.com/261406-2566-2/a3-typechecking-team/pull/7)
-  - refactor `env`
-  - create `lookup` function for symbol tables
-- [PR #13](https://github.com/261406-2566-2/a3-typechecking-team/pull/13)
-  - add pattern-matching rules: all except CNSTR-PTRN rule (Constructor pattern)
-- [PR #17](https://github.com/261406-2566-2/a3-typechecking-team/pull/17)
-  - add testcase
+- `import` statements are not supported yet.
+- `data` and `type` declarations are not supported due to parser limitations.
+- Potential bugs in function application type checking.
 
-## Gong
+## Tech Stack
 
-- [PR #12](https://github.com/261406-2566-2/a3-typechecking-team/pull/12)
-  - add `FUNC-APP-L `: typechecking rule
-  - add `FUNC-APP-R `: typechecking rule
-- [PR #19](https://github.com/261406-2566-2/a3-typechecking-team/pull/19)
-  - add testcase
-- Ask for help and knowledge from `Tee` & `Riw`
-- In finally gong can understand Ocaml and Functional
+- OCaml
+- Menhir (parser generator)
+- Dune (build system)
 
-# Issues
+## Installation and Prerequisites
 
-- `import` not supported yet
-- `data` and `type` will not be supported yet since we found out that our parser lacks constructor expression. The refactoring process will take a long time because we mostly reuse some nodes in most grammar rules, making it hard to refactor. `cnstr-ptrn` in pattern rules will also not be supported.
-- `FUNC-APP` `L & R` may bug on some Func but gong test เยอะสุดๆ
+1. **Install OCaml:**
+   - Follow the instructions on the [OCaml website](https://ocaml.org/docs/install.html) to install OCaml.
 
-# Comments
+2. **Install OPAM (OCaml Package Manager):**
+   - Follow the instructions on the [OPAM website](https://opam.ocaml.org/doc/Install.html) to install OPAM.
+
+3. **Install Dune:**
+   - Run the following command to install Dune:
+     ```sh
+     opam install dune
+     ```
+
+4. **Install Menhir:**
+   - Run the following command to install Menhir:
+     ```sh
+     opam install menhir
+     ```
+
+5. **Clone the Repository:**
+   - Clone the project repository to your local machine:
+     ```sh
+     git clone <repository-url>
+     cd lite-compiler
+     ```
+
+6. **Build the Project:**
+   - Use Dune to build the project:
+     ```sh
+     dune build
+     ```
+
+## Contributors
+
+- **Riw**
+  - Implemented various type checking rules and refactored AST and parser.
+- **Tee**
+  - Added initial environment setup and various type checking rules.
+- **Gong**
+  - Contributed to function application type checking and test cases.
+
+## Comments
+
+For more details, refer to the individual pull requests and commit history.
