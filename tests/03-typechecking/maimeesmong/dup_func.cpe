@@ -1,0 +1,4 @@
+
+def fail () : Integer = 2
+
+def fail () : Char = 'c'

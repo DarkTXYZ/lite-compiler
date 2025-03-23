@@ -1,0 +1,6 @@
+
+def f1 (x: Char): Bool = False
+
+def f2 (x: Bool): Char = 'c'
+
+def work (): Char -> Char = f2 . f1

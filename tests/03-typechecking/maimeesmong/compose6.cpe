@@ -1,0 +1,3 @@
+
+def fail (): Char -> Integer = 
+   (\(x: Integer) : Integer => 1) . (\(x: Char) (y: Integer) : Integer => 0)

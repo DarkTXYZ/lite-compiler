@@ -1,0 +1,8 @@
+def nonsense (a : [Integer]) (b : [Char]) : Bool = match (a , b) with
+  | ([] , []) -> True
+  | (x::xs , []) -> (x > 0)
+  | ([] , y::ys) -> (match y with 
+    | 'a' -> True
+    | _ -> False
+  )
+  | (x::xs , y::ys) -> True

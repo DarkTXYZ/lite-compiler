@@ -1,0 +1,4 @@
+def sumIntList (a : [Integer]) : Integer = match a with
+  | [] -> 0
+  | a::as -> a + (sumIntList as)
+  | _ -> 0

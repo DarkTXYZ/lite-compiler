@@ -1,0 +1,2 @@
+
+def work () : Integer -> Integer = let f (n: Integer) : Integer = 2 * n in f

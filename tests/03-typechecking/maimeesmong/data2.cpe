@@ -1,0 +1,6 @@
+data Shape = Circle Double | Rectangle Double Double | Triangle Double Double
+
+def find_area (shape : Shape) : Double = match shape with
+  | Circle r -> 3.14 * r
+  | Rectangle l w -> l * w
+  | Triangle b h -> 0.5 * b * h

@@ -1,0 +1,3 @@
+data Vertex a = Vertex a
+data Edge a = (Vertex a, Vertex a)
+data WeightedEdge a = (Vertex a, Vertex a, Double)

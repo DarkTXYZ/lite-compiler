@@ -1,0 +1,2 @@
+
+def fail () : Integer = let x = 2 and x = 3 in (x * x)

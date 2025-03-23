@@ -1,0 +1,6 @@
+Programming Assignment 1 test cases
+
+Put your test case files under your group's directory within this directory.
+For example, if your group's name is "cpe", your files should be under directory
+  tests/01-lexing/cpe/
+relative to the project's root directory.

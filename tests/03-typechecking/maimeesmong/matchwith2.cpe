@@ -1,0 +1,3 @@
+def test (a : Integer) (b : Char) (c : Double) : Bool = match (a,(b,c)) with
+  | (0, (c , 0.0)) -> True
+  | (x, (_ , y)) -> x > y

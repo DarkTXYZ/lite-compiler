@@ -1,0 +1,7 @@
+def calculateCircle (pi: Double) (l: Double): Double = pi * l * l
+
+def getPi (): Double = 3.14
+
+def areaCircleByRadius (r: Double): Double = calculateCircle getPi r
+
+def fail (): Double = areaCircleByRadius 3.0 

@@ -1,0 +1,4 @@
+
+def work () : () -> Integer = 
+  let f () : Integer = 2
+  in f

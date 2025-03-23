@@ -1,0 +1,3 @@
+
+def work (): Char -> Integer = 
+   (\(x: Integer) : Integer => 1) . (\(x: Char) : Integer => 0)

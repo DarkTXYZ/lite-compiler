@@ -1,0 +1,31 @@
+def split (arr:[Integer]) : ([Integer] , [Integer]) = 
+  match arr with
+  | [] -> ([],[])
+  | x::[] -> (x::[],[])
+  | x::y::rest -> (
+    let result = split rest in 
+    (    
+      match result with
+        | (l,r) -> (x::l , y::r)  
+    )
+  )
+def merge (left : [Integer]) (right : [Integer]) : [Integer] =
+  match (left,right) with
+  | ([] , right) -> right
+  | (left , []) -> left
+  | (l::ls, r::rs) -> if l < r then l :: (merge ls right) else r :: (merge left rs)
+
+def merge_sort (arr : [Integer]) : [Integer] =
+  match arr with
+  | [] -> []
+  | x::[] -> x::[]
+  | _ ->
+    let result = split arr in
+    (
+      match result with
+      | (l,r) -> (
+        let sorted_left = merge_sort l 
+        and sorted_right = merge_sort r 
+        in merge sorted_left sorted_right
+      )
+    )

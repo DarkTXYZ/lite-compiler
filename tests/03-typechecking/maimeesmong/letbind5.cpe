@@ -1,0 +1,2 @@
+
+def work () : Double = let x = 2 in (x * let x = 5.0 in 50 * x * x)

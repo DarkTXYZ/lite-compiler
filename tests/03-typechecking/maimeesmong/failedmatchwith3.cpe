@@ -1,0 +1,4 @@
+def fail (a : Integer) : Integer = match a with
+| 1 -> 'c'
+| 2 -> 'd'
+| _ -> 'f'

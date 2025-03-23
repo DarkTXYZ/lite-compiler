@@ -1,0 +1,16 @@
+(library
+ (name cpecmuCompiler))
+
+(menhir
+ (modules parser)
+ (flags --strict --dump --explain))
+
+(ocamllex lexer_a1)
+
+(ocamllex lexer)
+
+(ocamllex s_lexer)
+
+(menhir
+ (modules s_parser)
+ (flags --strict --dump --explain))

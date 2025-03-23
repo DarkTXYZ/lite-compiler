@@ -1,0 +1,7 @@
+data Stack a = EmptyStack | TopStack a (Stack a)
+
+def push_stack (x : a) (st : Stack a) : Stack a = (Top x) (st)
+
+def pop_stack (st : Stack a) : Stack a = match st with
+  | EmptyStack -> EmptyStack
+  | TopStack top sub_st -> sub_st

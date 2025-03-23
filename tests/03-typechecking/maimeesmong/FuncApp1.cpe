@@ -1,0 +1,4 @@
+
+def  b (a:Char) (v : Char) : Integer = c $ 1.0
+def c (v:Double):Integer = 2
+def a () : Integer = b 'c' 't'

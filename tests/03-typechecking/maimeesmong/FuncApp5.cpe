@@ -1,0 +1,5 @@
+def calculatecircle  (l: Double): Double = 3.14 * l * l
+
+def areaCircleByRadius (length: Double): Double = calculatecircle(  length )
+
+def work (): Double = areaCircleByRadius 3.0 

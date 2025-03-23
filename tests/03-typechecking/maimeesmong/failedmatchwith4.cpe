@@ -1,0 +1,6 @@
+def fail (a : [Integer]) (c : Char) : Char = match a with 
+| x::xs -> fail xs c
+| [] -> (match c with
+  | 'a' -> 'c'
+  | _ -> False
+)

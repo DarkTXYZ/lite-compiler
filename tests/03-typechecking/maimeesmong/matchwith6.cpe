@@ -1,0 +1,7 @@
+def f1 (x: Integer): Integer = x + 1
+
+def f2 (x: Integer): Integer = x * 2
+
+def work (flag : Bool): Integer -> Integer = match flag with
+  | True -> f2.f1
+  | _ -> \(x: Integer) : Integer => x - 1

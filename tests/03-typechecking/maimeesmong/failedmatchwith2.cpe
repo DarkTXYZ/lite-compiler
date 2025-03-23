@@ -1,0 +1,4 @@
+def fail (a : Integer) : Char = match a with
+| 1 -> 'a'
+| 2 -> 5
+| _ -> True

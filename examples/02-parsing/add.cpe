@@ -1,0 +1,14 @@
+(((import utils))
+ ((def
+   main
+   ((arg String))
+   String
+   (match
+    (parseIntList arg)
+    ((-> (:: a (:: b [])) (showInt (+ a b)))
+     (-> _ (error "expected 2 integers"))
+    )
+   )
+  )
+ )
+)

@@ -1,0 +1,4 @@
+def b (a: Char ) (b: Char )   : Integer = 4
+def a (a : Char -> Integer  ) : Char = '2'
+def c () : Char    =  a  $ ( b  '4' ) 
+ 

@@ -1,0 +1,6 @@
+def isEven (n : Integer) : String = match (n%2) with
+  | 0 -> "Even"
+  | 1 -> "Old"
+
+
+def main () : String = isEven 4

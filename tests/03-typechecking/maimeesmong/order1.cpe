@@ -1,0 +1,5 @@
+
+def fail1 () : Char = 3
+
+def fail2 () : Integer = 'c'
+

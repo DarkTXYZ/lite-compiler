@@ -1,0 +1,133 @@
+(((import pervasives))
+ ((def
+   reverse
+   ((xs ([] a)))
+   ([] a)
+   (((foldl (\ ((acc ([] a)) (x a)) ([] a) (:: x acc))) []) xs)
+  )
+  (def
+   takeWhile
+   ((p (-> a Bool)) (xs ([] a)))
+   ([] a)
+   (match
+    xs
+    ((-> [] []) (-> (:: hd tl) (if (p hd) (:: hd ((takeWhile p) tl)) [])))
+   )
+  )
+  (def
+   dropWhile
+   ((p (-> a Bool)) (xs ([] a)))
+   ([] a)
+   (match xs ((-> [] []) (-> (:: hd tl) (if (p hd) ((dropWhile p) tl) xs))))
+  )
+  (def
+   span
+   ((p (-> a Bool)) (xs ([] a)))
+   (, ([] a) ([] a))
+   (match
+    xs
+    ((-> [] (, [] []))
+     (->
+      (:: hd tl)
+      (if
+       (p hd)
+       (match ((span p) tl) ((-> (, fr bk) (, (:: hd fr) bk))))
+       (, [] xs)
+      )
+     )
+    )
+   )
+  )
+  (def not ((b Bool)) Bool (match b ((-> false true) (-> true false))))
+  (def
+   break
+   ((p (-> a Bool)) (xs ([] a)))
+   (, ([] a) ([] a))
+   ((span (. not p)) xs)
+  )
+  (def isSpace ((c Char)) Bool (|| (== c ' ') (|| (== c '\\n') (== c '\\t'))))
+  (def
+   words
+   ((str String))
+   ([] String)
+   (match
+    ((dropWhile isSpace) str)
+    ((-> "" [])
+     (-> s (match ((break isSpace) s) ((-> (, w rest) (:: w (words rest))))))
+    )
+   )
+  )
+  (def
+   unwords
+   ((strs ([] String)))
+   String
+   (match
+    strs
+    ((-> [] "")
+     (-> (:: hd []) hd)
+     (-> (:: hd tl) (++ hd (++ " " (unwords tl))))
+    )
+   )
+  )
+  (def
+   charToDigit
+   ((c Char))
+   Integer
+   (let
+    ((a (- (ord c) 48)))
+    (if (&& (>= a 0) (<= a 9)) a (error "not a number"))
+   )
+  )
+  (def
+   digitToChar
+   ((a Integer))
+   Char
+   (if (&& (>= a 0) (<= a 9)) (chr (+ a 48)) (error "not a digit"))
+  )
+  (def
+   parseInt
+   ((str String))
+   Integer
+   (match
+    str
+    ((-> [] (error "not a number"))
+     (->
+      (:: hd tl)
+      (if
+       (== hd '-')
+       (- 0 (parseInt tl))
+       (((foldl (\ ((acc Integer) (d Integer)) Integer (+ (* 10 acc) d))) 0)
+        ((map charToDigit) str)
+       )
+      )
+     )
+    )
+   )
+  )
+  (def
+   showInt
+   ((x Integer))
+   String
+   (if
+    (== x 0)
+    "0"
+    (if
+     (< x 0)
+     (:: '-' (showInt (- x)))
+     (let
+      ((intToDigits
+        ((x Integer))
+        ([] Integer)
+        (if (== x 0) [] (:: (% x 10) (intToDigits (/ x 10))))
+       )
+      )
+      ((. (map digitToChar) (. reverse intToDigits)) x)
+     )
+    )
+   )
+  )
+  (def parseIntList ((str String)) ([] Integer) ((. (map parseInt) words) str))
+  (def showIntList ((xs ([] Integer))) String ((. unwords (map showInt)) xs))
+  (def main ((arg String)) String arg)
+ )
+)

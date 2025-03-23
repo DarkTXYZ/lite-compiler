@@ -1,0 +1,4 @@
+
+def work () : Integer -> (Integer -> Integer) -> Integer -> Integer = 
+  \(x: Integer) (y: Integer -> Integer) (z: Integer) : Integer => x * 2
+

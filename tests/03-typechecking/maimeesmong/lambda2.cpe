@@ -1,0 +1,2 @@
+
+def fail () : Integer -> Integer -> Char = \(x: Integer) (y: Char) : Char => x * 2

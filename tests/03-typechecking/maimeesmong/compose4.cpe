@@ -1,0 +1,2 @@
+
+def fail (): Char -> Char = (\(x: Char) : Integer => 0) . 2

@@ -1,0 +1,12 @@
+def nand (p1 : Bool) (p2 : Bool) : Bool = (p1 && p2) == False
+
+def not (p : Bool) : Bool = nand p p
+
+def and (p1 : Bool) (p2 : Bool) : Bool = nand (nand p1 p2) (nand p1 p2)
+
+def or (p1 : Bool) (p2 : Bool) : Bool = nand (nand p1 p1) (nand p2 p2)
+
+def nor (p1 : Bool) (p2 : Bool) : Bool = nand (nand (nand p1 p1) (nand p2 p2)) (nand (nand p1 p1) (nand p2 p2))
+
+def xor (p1 : Bool) (p2 : Bool) : Bool = nand (nand p1 (nand p1 p2)) (nand p2 (nand p1 p2))
+

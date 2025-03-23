@@ -1,0 +1,9 @@
+(test
+ (modules a1_test)
+ (name a1_test)
+ (libraries ounit2 cpecmuCompiler))
+
+(test
+ (modules a3_test)
+ (name a3_test)
+ (libraries ounit2 cpecmuCompiler))

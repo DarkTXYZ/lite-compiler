@@ -1,0 +1,7 @@
+
+
+def f1 (x: Char): Integer = 0
+
+def f2 (x: Bool): Char = 'c'
+
+def fail (): Char -> Char = f2 . f1

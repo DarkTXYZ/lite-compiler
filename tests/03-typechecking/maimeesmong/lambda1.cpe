@@ -1,0 +1,2 @@
+
+def work () : Integer -> Integer = \(x: Integer) : Integer => x * 2
