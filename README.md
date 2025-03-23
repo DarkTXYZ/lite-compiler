@@ -1,6 +1,6 @@
-# Lite Compiler
+# CPE: Programming Extraordinaire - Lite Compiler
 
-Lite Compiler is a simple compiler project aimed at demonstrating basic type checking and parsing functionalities. The goal of this project is to provide a foundational understanding of compiler construction, focusing on type checking and parsing.
+CPE: Programming Extraordinaire - Lite Compiler is a simple compiler project aimed at demonstrating basic type checking and parsing functionalities. The goal of this project is to provide a foundational understanding of compiler construction, focusing on type checking and parsing.
 
 > **Note:** This project is still under development and may contain bugs or incomplete features.
 
