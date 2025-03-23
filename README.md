@@ -1,6 +1,8 @@
 # Lite Compiler
 
-Lite Compiler is a simple compiler project aimed at demonstrating basic type checking and parsing functionalities.
+Lite Compiler is a simple compiler project aimed at demonstrating basic type checking and parsing functionalities. The goal of this project is to provide a foundational understanding of compiler construction, focusing on type checking and parsing.
+
+> **Note:** This project is still under development and may contain bugs or incomplete features.
 
 ## Features
 
@@ -65,7 +67,3 @@ Lite Compiler is a simple compiler project aimed at demonstrating basic type che
   - Added initial environment setup and various type checking rules.
 - **Gong**
   - Contributed to function application type checking and test cases.
-
-## Comments
-
-For more details, refer to the individual pull requests and commit history.
